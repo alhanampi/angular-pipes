@@ -1,0 +1,139 @@
+<div class="container">
+  <br>
+
+  <h1> Today is a good day to pipe! </h1>
+  <hr>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> {{nombre}} </td>
+        <td> uppercase </td>
+        <td> {{nombre | uppercase}} </td>
+      </tr>
+
+      <tr>
+        <td> {{nombre}} </td>
+        <td> uppercase </td>
+        <td> {{nombre | lowercase}} </td>
+      </tr>
+
+      <tr>
+        <td> {{nombre}} </td>
+        <td> slice: 3 </td>
+        <td> {{nombre | slice: 3}} </td> <!-- show from position [3] on-->
+      </tr>
+
+      <tr>
+        <td> {{nombre}} </td>
+        <td> slice: 0:3 </td> <!-- show from position [0] to [3]-->
+        <td> {{nombre | slice: 0:3}} </td>
+      </tr>
+
+      <tr>
+        <td> {{array}} </td>
+        <td> slice: 1:5 </td> <!-- show from position [1] to [5] -->
+        <td> {{array | slice: 1:5}} </td>
+      </tr>
+
+      <tr>
+        <td> {{PI}} </td>
+        <td> number '3.0-0' </td> <!-- 3 integer numbers, no float -->
+        <td> {{PI | number: '3.0-0'}} </td>
+      </tr>
+
+      <tr>
+        <td> {{PI}} </td>
+        <td> number: '1.0-2' </td> <!-- 0 minimun, 2 maximum float -->
+        <td> {{PI | number: '1.0-2'}} </td>
+      </tr>
+
+      <tr>
+        <td> {{latinum}} </td>
+        <td> number: '.2-2' </td> <!-- number with float and comma separation  -->
+        <td> {{latinum | number: '.2-2'}} </td>
+      </tr>
+
+      <tr>
+        <td> {{percentage}} </td>
+        <td> percent: '2.2-2' </td> <!-- 2 minimun, 2 maximum float -->
+        <td> {{percentage | percent:'2.2-2'}} </td>
+      </tr>
+
+      <tr>
+        <td> {{latinum}} </td>
+        <td> currency </td> <!-- only use it for money! uses ISO 4217 standard -->
+        <td> {{latinum | currency}} </td>
+      </tr>
+
+      <tr>
+        <td> {{latinum}} </td>
+        <td> currency: 'EUR' </td> <!-- shows the character -->
+        <td> {{latinum | currency:'EUR'}} </td>
+      </tr>
+
+      <tr>
+        <td> {{latinum}} </td>
+        <td> currency: 'EUR': false </td> <!-- shows the code -->
+        <td> {{latinum | currency:'EUR':false}} </td>
+      </tr>
+
+      <tr>
+        <td> {{latinum}} </td>
+        <td> currency: 'EUR': false:'4.0-0' </td> <!-- 4 integer, no float -->
+        <td> {{latinum | currency:'EUR':false:'4.0-0'}} </td>
+      </tr>
+
+      <tr>
+        <td> promise </td>
+        <td> async </td> <!-- without the async, it prints [object Promise] -->
+        <td> {{promise | async}} </td>
+      </tr>
+
+      <tr>
+        <td> {{date}} </td>
+        <td> date </td> <!-- default date -->
+        <td> {{date | date}} </td>
+      </tr>
+
+      <tr>
+          <td> {{date}} </td>
+          <td> date: 'medium' </td> 
+          <td> {{date | date:'medium'}} </td>
+      </tr>
+
+      <tr>
+          <td> {{nameForPipe}} </td>
+          <td> personalized pipe for capitalization </td> 
+          <td> {{nameForPipe | capitalization}} </td>
+      </tr>
+
+      <tr>
+          <td> {{nameForPipe}} </td>
+          <td> personalized pipe for capitalization - only first word </td> 
+          <td> {{nameForPipe | capitalization:false}} </td>
+      </tr>
+  
+
+    </tbody>
+  </table>
+
+  <div class="card col-md-6 border-danger">
+    <div class="card-header border-danger ">
+      <h4>JSON Pipe</h4>
+    </div>
+    <!-- without the JSON pipe, I'd get an object object -->
+    <pre>
+      {{crew | json}}
+    </pre>
+  </div>
+  <br><br><br>
+
+</div>

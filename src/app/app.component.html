@@ -104,36 +104,58 @@
       </tr>
 
       <tr>
-          <td> {{date}} </td>
-          <td> date: 'medium' </td> 
-          <td> {{date | date:'medium'}} </td>
+        <td> {{date}} </td>
+        <td> date: 'medium' </td>
+        <td> {{date | date:'medium'}} </td>
       </tr>
 
       <tr>
-          <td> {{nameForPipe}} </td>
-          <td> personalized pipe for capitalization </td> 
-          <td> {{nameForPipe | capitalization}} </td>
+        <td> {{nameForPipe}} </td>
+        <td> personalized pipe for capitalization </td>
+        <td> {{nameForPipe | capitalization}} </td>
       </tr>
 
       <tr>
-          <td> {{nameForPipe}} </td>
-          <td> personalized pipe for capitalization - only first word </td> 
-          <td> {{nameForPipe | capitalization:false}} </td>
+        <td> {{nameForPipe}} </td>
+        <td> personalized pipe for capitalization - only first word </td>
+        <td> {{nameForPipe | capitalization:false}} </td>
       </tr>
-  
+
+      <tr>
+        <td> {{nombre}} </td>
+        <td> password: {{on}} <button (click)="on = !on" type="button" class="btn btn-outline-danger">Show
+            password</button> </td>
+        <td> {{pass | password: on}} </td>
+      </tr>
+
+
 
     </tbody>
   </table>
 
-  <div class="card col-md-6 border-danger">
-    <div class="card-header border-danger ">
-      <h4>JSON Pipe</h4>
-    </div>
-    <!-- without the JSON pipe, I'd get an object object -->
-    <pre>
+
+  <div class="container">
+    <div class="row">
+      <div class="card col-md-6 border-danger">
+        <div class="card-header border-danger ">
+          <h4>JSON Pipe</h4>
+        </div>
+        <!-- without the JSON pipe, I'd get an object object -->
+        <pre>
       {{crew | json}}
     </pre>
-  </div>
-  <br><br><br>
+      </div>
 
+      <div class="card col-md-6 border-danger">
+        <h4>Dom Pipe</h4>
+        <!--if I paste a video URL it works, but without the pipe, I can't bring it from a variable: <iframe src="https://www.youtube.com/embed/Nt9dOIdGIeM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        <iframe height="315" [src]="video | domSafe: 'https://www.youtube.com/embed/'" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- with that pipe I can securely put youtube videos-->
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
 </div>

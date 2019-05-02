@@ -7,7 +7,9 @@ registerLocaleData(localeEs);
 
 
 import { AppComponent } from './app.component';
-import { CapitalizationPipe } from './pipes/capitalization.pipe'; // pipes go in declarations
+import { CapitalizationPipe } from './pipes/capitalization.pipe';
+import { DomSafePipe } from './pipes/dom-safe.pipe';
+import { PasswordPipe } from './pipes/password.pipe'; // pipes go in declarations
 
 
 
@@ -15,7 +17,7 @@ import { CapitalizationPipe } from './pipes/capitalization.pipe'; // pipes go in
 @NgModule({
   declarations: [
     AppComponent, 
-    CapitalizationPipe
+    CapitalizationPipe, DomSafePipe, PasswordPipe
   ],
   imports: [
     BrowserModule

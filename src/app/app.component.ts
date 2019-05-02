@@ -36,4 +36,10 @@ date = new Date();
 
 nameForPipe = 'beNjaMIn sisKo';
 
+video = 'Nt9dOIdGIeM'; // youtube's video URL
+
+on: boolean = true;
+
+pass = 'no-honor';
+
 }
